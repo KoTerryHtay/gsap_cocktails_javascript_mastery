@@ -25,6 +25,31 @@ export default function Menu() {
       { yPercent: 100, opacity: 0 },
       { yPercent: 0, opacity: 1, duration: 1, ease: "power1.inOut" }
     );
+
+    const parallaxTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#menu",
+        start: "top center",
+        // end: "bottom 80%",
+        // top of the section reaches about 30% of the viewport or of the screen
+        // when the bottom of the cocktails reaches about 80% down the screen
+        scrub: true,
+      },
+    });
+
+    parallaxTimeline.from("#m-left-leaf", {
+      x: -100,
+      y: 100,
+      // y: "-50",
+      duration: 1,
+      ease: "power1.inOut",
+    });
+    // .from("#m-right-leaf", {
+    //   x: -50,
+    //   y: -100,
+    //   duration: 1,
+    //   ease: "power1.inOut",
+    // });
   }, [currentIndex]);
 
   const totalCocktails = allCocktails.length;

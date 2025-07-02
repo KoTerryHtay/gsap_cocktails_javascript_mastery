@@ -30,7 +30,7 @@ export default function Menu() {
       scrollTrigger: {
         trigger: "#menu",
         start: "top center",
-        // end: "bottom 80%",
+        end: "bottom 80%",
         // top of the section reaches about 30% of the viewport or of the screen
         // when the bottom of the cocktails reaches about 80% down the screen
         scrub: true,
